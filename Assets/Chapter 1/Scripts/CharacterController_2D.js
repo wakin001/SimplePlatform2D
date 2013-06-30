@@ -8,7 +8,7 @@ public var getKeySound : AudioClip;
 public var jumpSound : AudioClip;
 public var layerMask : LayerMask;
 
-//private var restartButton : GUITexture;
+private var restartButton : GUITexture;
 private var in_direction : int;
 private var b_isJumping : boolean;
 private var f_height : float;
@@ -17,9 +17,9 @@ private var b_hasKey : boolean;
 
 public function Start() : void {
 	//Get restartButton from the Game Scene
-//	restartButton = GameObject.FindWithTag("RestartButton").guiTexture;
-//	//make restart Button disabled
-//	restartButton.enabled = false;
+	restartButton = GameObject.FindWithTag("RestartButton").guiTexture;
+	//make restart Button disabled
+	restartButton.enabled = false;
 	
 	//Start with no Key
 	b_hasKey = false;
@@ -130,7 +130,7 @@ public function OnTriggerEnter (hit : Collider) : IEnumerator {
 			//We close the door
 			hit.gameObject.renderer.material.mainTexture = doorCloseTexture;
 			//Show Restart Button
-//			restartButton.enabled = true;
+			restartButton.enabled = true;
 		}
 	}
 }
